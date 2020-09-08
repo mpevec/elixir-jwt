@@ -1,0 +1,2 @@
+GET http://localhost:4001/greetings HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGhleS5jb20iLCJleHAiOjE1OTk1NTc4ODUsImdyb3VwcyI6WyJhZG1pbiJdLCJpc3MiOiJNYXR0aGlldSBMYWJzIFNSTCIsInN1YiI6MX0.7BOSUylNR2JKj_HkXluWY9P9CKzkuwLezx3_kT09kug

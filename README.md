@@ -1,6 +1,6 @@
 # JwtExample
 
-A small Elixir application showing how to create and verify JWT using Plugs and JOSE library. More information on my blog:
+A small Elixir application showing how to create and verify JWT using Plugs and JOSE library. More information on my [blog] (https://dev.to/mpevec9/elixir-plug-and-jwt-4ijm)
 
 ## Installation
 

@@ -1,7 +1,7 @@
 defmodule JwtExample.Jwt do
   def create(
         %{"groups" => groups, "email" => email, "id" => id} = _user,
-        expired_in \\ Application.get_env(:jwt_example, :jwt_expiration_time_minutes)
+        expired_in \\ Application.fetch_env!(:jwt_example, :jwt_expiration_time_minutes)
       ) do
     # JSON Web Keys
     jwk = %{
@@ -16,7 +16,7 @@ defmodule JwtExample.Jwt do
 
     # JSON Web Token (JWT)
     jwt = %{
-      "iss" => Application.get_env(:jwt_example, :jwt_issuer),
+      "iss" => Application.fetch_env!(:jwt_example, :jwt_issuer),
       "sub" => id,
       "exp" => DateTime.utc_now() |> DateTime.add(expired_in * 60, :second) |> DateTime.to_unix(),
       "groups" => groups,
@@ -55,6 +55,6 @@ defmodule JwtExample.Jwt do
   end
 
   defp encode_secret() do
-    Application.get_env(:jwt_example, :jwt_secret_hs256_signature) |> :jose_base64url.encode()
+    Application.fetch_env!(:jwt_example, :jwt_secret_hs256_signature) |> :jose_base64url.encode()
   end
 end
